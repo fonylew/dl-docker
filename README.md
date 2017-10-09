@@ -53,6 +53,11 @@ docker run -it --name dl-docker -p 8888:8888 -p 6006:6006 -v /sharedfolder:/root
 ```
 	
 **GPU Version**
+Run in background with jupyter on startup
+```bash
+nvidia-docker run -d --name deeplearning -p 8888:8888 -p 6006:6006 -v /sharedfolder:/root/sharedfolder teamsoo/dl-docker:gpu /bin/bash -c "/root/run_jupyter.sh --allow-root --NotebookApp.token=''"
+```
+Run with interactive shell:
 ```bash
 nvidia-docker run -it --name dl-docker -p 8888:8888 -p 6006:6006 -v /sharedfolder:/root/sharedfolder teamsoo/dl-docker:gpu bash
 ```
